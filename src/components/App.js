@@ -1,17 +1,35 @@
-import React, { useEffect, useState } from "react";
-import '../styles/App.css';
+import React, { useState } from 'react';
 
-const App = () => {
+function App() {
+  const [name, setName] = useState('');
 
-  let [count, setCount] = useState(0)
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Submitted: ${name}`);
+  };
 
   return (
-    <div class="ball">
-      <h1 class="count" ondoubleclick={() => { alert("cant edit it") }}>{count}</h1>
-      <button class='increment-button' onclick={() => { setCount(count + 1) }}>Increment</button>
-    </div>
-  )
-}
+    <div className="container">
+      <h1 className="title">JSX Keyword Fix Challenge</h1>
 
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="username">Enter Name:</label>
+        <input
+          type="text"
+          id="username"
+          className="input-field"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <button className="submit-btn" type="submit">
+          Submit
+        </button>
+      </form>
+
+      <p className="output">Typed Name: {name}</p>
+    </div>
+  );
+}
 
 export default App;
