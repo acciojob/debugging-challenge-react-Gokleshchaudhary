@@ -1,33 +1,18 @@
 import React, { useState } from 'react';
+import './App.css';
 
 function App() {
-  const [name, setName] = useState('');
+  const [count, setCount] = useState(0);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Submitted: ${name}`);
+  const handleClick = () => {
+    setCount(count + 1);
   };
 
   return (
     <div className="container">
       <h1 className="title">JSX Keyword Fix Challenge</h1>
-
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Enter Name:</label>
-        <input
-          type="text"
-          id="username"
-          className="input-field"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-
-        <button className="submit-btn" type="submit">
-          Submit
-        </button>
-      </form>
-
-      <p className="output">Typed Name: {name}</p>
+      <button className="btn" onClick={handleClick}>Click Me</button>
+      <p className="counter">{count}</p>
     </div>
   );
 }
