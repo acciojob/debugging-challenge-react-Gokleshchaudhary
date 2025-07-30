@@ -1,12 +1,22 @@
-h1 {
-    color: #27aedb;
-    text-align: center;
-    }
-    
+.container {
+  padding: 20px;
+}
 
-button{
-    color: #27aedb;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+.title {
+  font-size: 24px;
+}
+
+.input-field {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.submit-btn {
+  margin-left: 10px;
+  padding: 5px 10px;
+}
+
+.output {
+  margin-top: 15px;
+  color: blue;
 }
