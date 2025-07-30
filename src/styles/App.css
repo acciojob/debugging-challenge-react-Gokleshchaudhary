@@ -1,9 +1,11 @@
 .container {
-  padding: 20px;
+  padding: 40px; /* Keep the most recent value */
+  text-align: center;
 }
 
 .title {
-  font-size: 24px;
+  font-size: 28px; /* Keep the latest */
+  font-weight: bold;
 }
 
 .input-field {
@@ -21,16 +23,6 @@
   color: blue;
 }
 
-.container {
-  text-align: center;
-  padding: 40px;
-}
-
-.title {
-  font-size: 28px;
-  font-weight: bold;
-}
-
 .btn {
   padding: 10px 20px;
   font-size: 16px;
@@ -41,4 +33,3 @@
   margin-top: 20px;
   font-size: 22px;
 }
-
