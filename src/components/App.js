@@ -1,33 +1,38 @@
-// src/App.js
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 
-function App() {
-  const handleClick = () => {
-    alert("Button clicked!");
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  handleClick = () => {
+    this.setState((prevState) => ({ count: prevState.count + 1 }));
   };
 
-  return (
-    <div className="app-container">
-      <h1 className="title">JSX Fix Challenge</h1>
+  render() {
+    return (
+      <div className="app-container">
+        <h1 onDoubleClick={() => alert("Heading double-clicked")}>
+          {this.state.count === 0 ? "JSX Fix Challenge" : this.state.count}
+        </h1>
+        <form className="form">
+          <label htmlFor="name" className="label">Name:</label>
+          <input id="name" className="input" />
 
-      <form className="form">
-        <label htmlFor="name" className="label">
-          Name:
-        </label>
-        <input type="text" id="name" className="input" />
+          <label htmlFor="email" className="label">Email:</label>
+          <input id="email" className="input" />
 
-        <label htmlFor="email" className="label">
-          Email:
-        </label>
-        <input type="email" id="email" className="input" />
-
-        <button type="button" className="submit-btn" onClick={handleClick}>
-          Submit
-        </button>
-      </form>
-    </div>
-  );
+          <button type="button" className="submit-btn" onClick={this.handleClick}>
+            Submit
+          </button>
+        </form>
+      </div>
+    );
+  }
 }
 
 export default App;
